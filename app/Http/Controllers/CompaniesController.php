@@ -47,6 +47,10 @@ class CompaniesController extends Controller
     public function store(AddCompanyRequest $request)
     {   
 
+        $request->only([
+            'name', 'email', 'logo', 'website'
+        ]);
+
         if ($request->hasFile('logo')) {
             $file = $request->file('logo');
             $filename = 'company-logo-' . time() . '.' . $file->getClientOriginalExtension();
@@ -97,6 +101,11 @@ class CompaniesController extends Controller
      */
     public function update(AddCompanyRequest $request, Company $company)
     {
+
+        $request->only([
+            'name', 'email', 'logo', 'website'
+        ]);
+
         if ($request->hasFile('logo')) {
             $file = $request->file('logo');
             $filename = 'company-logo-' . time() . '.' . $file->getClientOriginalExtension();
