@@ -46,11 +46,3 @@ Route::prefix('employee')->name('employee.')->group(function() {
     Route::delete('delete/{employee}', 'EmployeesController@destroy')->name('delete');
 
 });
-
-// Route::get('form', function () {
-//     return view('company.add-company-logo');
-// });
-
-// Route::post('form', function (Request $request) {
-//     var_dump($request->file('profile_picture'));
-// });

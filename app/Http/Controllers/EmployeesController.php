@@ -8,6 +8,8 @@ use App\Company;
 use App\Http\Requests\AddEmployeeRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeMail;
 
 class EmployeesController extends Controller
 {
@@ -54,6 +56,8 @@ class EmployeesController extends Controller
                 $company_id = $company->id;
             }
         }
+
+        Mail::to($request->email)->send(new WelcomeMail());
 
         Employee::create([
             'user_id' => $user->id,
