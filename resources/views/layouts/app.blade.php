@@ -45,12 +45,16 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        <li class="nav-item">
-                            <a href="{{ route('language', 'en') }}" class="nav-link">EN</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{ route('language', 'fr') }}" class="nav-link">FR</a>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" 
+                                class="nav-link dropdown-toggle" 
+                                href="#" role="button" data-toggle="dropdown" 
+                                aria-haspopup="true" 
+                                aria-expanded="false" v-pre>Language <span class="caret"></span></a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('language', 'en') }}">EN</a>
+                                <a class="dropdown-item" href="{{ route('language', 'fr') }}">FR</a>
+                            </div>
                         </li>
 
                         <!-- Authentication Links -->
