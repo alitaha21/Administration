@@ -3,31 +3,31 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Update an Employee</h4>
+            <h4 class="card-title">Mettre à jour l'employé</h4>
         </div>
 
         <div class="container">
             <div class="jumbotron">
             <ul class="list-group">
                 <li class="list-group-item">
-                    <h3>Enter Employee Information:</h3>
-                    <form action="{{ route('employee.update', $employee->id) }}" method="POST">
+                    <h3>Entrez les informations de l'employé:</h3>
+                    <form action="{{ route('employee.update', ['lang' => app()->getLocale(), 'employee' => $employee->id]) }}" method="POST">
                         @method('PATCH')
                         @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" name="firstname" placeholder="First name"
+                            <input type="text" class="form-control" name="firstname" placeholder="{{ __('app-text.firstName') }}"
                             value="{{ $employee->first_name }}">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="lastname" placeholder="Last name"
+                            <input type="text" class="form-control" name="lastname" placeholder="{{ __('app-text.lastName') }}"
                             value="{{ $employee->last_name }}">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="email" placeholder="Email"
+                            <input type="text" class="form-control" name="email" placeholder="{{ __('app-text.lastName') }}"
                             value="{{ $employee->email }}">
                         </div>
                         <div class="form-group">
-                            <input type="phone" class="form-control" name="phone" placeholder="Phone number"
+                            <input type="phone" class="form-control" name="phone" placeholder="{{ __('app-text.phoneNumber') }}"
                             value="{{ $employee->phone }}">
                         </div>
                         <div class="form-group">
@@ -41,7 +41,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <button class="btn btn-primary" type="submit">Update employee</button>
+                        <button class="btn btn-primary" type="submit">{{ __('app-text.updateEmployee') }}</button>
                     </form>
                 </li>
                 <li class="list-group-item">

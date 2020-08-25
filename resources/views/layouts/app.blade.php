@@ -23,14 +23,14 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ route('welcome') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 @if(auth()->user())
-                    <a href="{{ url('/company/all') }}" class="navbar">Show Companies</a>
-                    <a href="{{ url('/company/display') }}" class="navbar">Add a Company</a>
-                    <a href="{{ url('/employee/all') }}" class="navbar">Show Employees</a>
-                    <a href="{{ url('/employee/display') }}" class="navbar">Add an Employee</a>
+                    <a href="{{ route('company.all') }}" class="navbar-nav nav-item nav-link">{{ __('app-text.showCompanies') }}</a>
+                    <a href="{{ route('company.add') }}" class="navbar-nav nav-item nav-link">{{ __('app-text.addACompany') }}</a>
+                    <a href="{{ route('employee.all') }}" class="navbar-nav nav-item nav-link">{{ __('app-text.showEmployees') }}</a>
+                    <a href="{{ route('employee.add') }}" class="navbar-nav nav-item nav-link">{{ __('app-text.addAnEmployee') }}</a>
                 @endif
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -44,14 +44,23 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            <a href="{{ route('language', 'en') }}" class="nav-link">EN</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('language', 'fr') }}" class="nav-link">FR</a>
+                        </li>
+
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('app-text.login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('app-text.register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -64,7 +73,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('app-text.logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

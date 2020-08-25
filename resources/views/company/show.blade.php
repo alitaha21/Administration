@@ -3,7 +3,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Display a Company</h4>
+            <h4 class="card-title">{{ __('app-text.showCompanyDisplay') }}</h4>
         </div>
 
         <div class="container">
@@ -11,10 +11,10 @@
                 <table class="table table-striper">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Logo</th>
-                            <th>Website</th>
+                            <th>{{ __('app-text.showCompanyName') }}</th>
+                            <th>{{ __('app-text.showCompanyEmail') }}</th>
+                            <th>{{ __('app-text.showCompanyLogo') }}</th>
+                            <th>{{ __('app-text.showCompanyWebsite') }}</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -29,15 +29,15 @@
                     </tbody>
                 </table>
 
-                <h4 class="card-title">Company's employees</h4>
+                <h4 class="card-title">{{ __('app-text.showCompanysEmployees') }}</h4>
 
                 <table class="table table-striper">
                     <thead class="thead-dark">
                         <tr>
-                            <th>User ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
+                            <th>{{ __('app-text.showCompanysUserId') }}</th>
+                            <th>{{ __('app-text.showCompanyName') }}</th>
+                            <th>{{ __('app-text.showCompanyEmail') }}</th>
+                            <th>{{ __('app-text.showPhone') }}</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -56,8 +56,8 @@
                     @endforeach
                 </table>
                 <div class="container">
-                    <a href="{{ route('company.update', $company->id) }}" class="btn btn-primary">Edit</a>
-                    <a href="/company/all" class="btn btn-secondary">Back</a>
+                    <a href="{{ route('company.update', $company->id) }}" class="btn btn-primary">{{ __('app-text.showEdit') }}</a>
+                    <a href="/company/all" class="btn btn-secondary">{{ __('app-text.showBack') }}</a>
                 </div>
             </ul>
         </div>       

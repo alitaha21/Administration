@@ -3,7 +3,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Here we display employees.</h4>
+            <h4 class="card-title">{{ __('app-text.indexInfo') }}</h4>
         </div>
 
         <div class="container">
@@ -11,7 +11,7 @@
                 <table class="table table-striper">
                     <thead class="thead-dark">
                         <tr>
-                            <td>Name</td>
+                            <td>{{ __('app-text.indexName') }}</td>
                             <td></td>
                         </tr>
                     </thead>
@@ -19,11 +19,11 @@
                         @foreach($employees as $employee)
                             <tr>
                                 <td><a href="{{ route('employee.show', $employee->id) }}">{{ $employee->first_name }} {{ $employee->last_name }}</a></td>
-                                <td><a href="{{ route('employee.update', $employee->id) }}" class="btn btn-primary">Edit</a></td>
+                                <td><a href="{{ route('employee.update', $employee->id) }}" class="btn btn-primary">{{ __('app-text.indexEdit') }}</a></td>
                                 <td><form action="{{ route('employee.delete', $employee->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger" type="submit">Delete</button>
+                                <button class="btn btn-danger" type="submit">{{ __('app-text.indexDelete') }}</button>
                                 </form></td>
                             </tr>
                         @endforeach
