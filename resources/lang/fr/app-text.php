@@ -46,7 +46,7 @@ return [
     'updateACompany' => 'Mettre a jour une entreprise',
     'editCompanyInfo' => 'Entrez les informations de l\'entreprise:',
     'updateCompany' => 'Mettre a jour une entreprise',
-    'indexDisplayCompanies' => 'Afficher des Entreprises',
+    'indexDisplayCompanies' => 'Afficher les Entreprises',
     'showCompanyDisplay' => 'Afficher une Entreprise',
     'showCompanyName' => 'Nom',
     'showCompanyEmail' => 'Email',

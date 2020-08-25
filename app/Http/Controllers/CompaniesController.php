@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Company;
 use App\Employee;
 use App\Http\Requests\AddCompanyRequest;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeMail;
+// use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Response;
 // use Image;
 
@@ -50,6 +52,8 @@ class CompaniesController extends Controller
         $request->only([
             'name', 'email', 'logo', 'website'
         ]);
+
+        Mail::to($request->email)->send(new WelcomeMail());
 
         if ($request->hasFile('logo')) {
             $file = $request->file('logo');

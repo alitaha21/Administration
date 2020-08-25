@@ -2,17 +2,18 @@
 
 @section('content')
     <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">{{ __('app-text.indexInfo') }}</h4>
-        </div>
-
         <div class="container">
+
+            <div class="card-body">
+                <h4 class="card-title">{{ __('app-text.indexInfo') }}</h4>
+            </div>
+
             <ul class="list-group">
                 <table class="table table-striper">
                     <thead class="thead-dark">
                         <tr>
-                            <td>{{ __('app-text.indexName') }}</td>
-                            <td></td>
+                            <th>{{ __('app-text.indexName') }}</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
